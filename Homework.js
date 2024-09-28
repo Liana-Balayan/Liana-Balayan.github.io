@@ -1,46 +1,66 @@
-////// տ ն ա յ ի ն ա շ խ ա տ ա ն ք //////////
+////// տ ն ա յ ի ն ա շ խ ա տ ա ն ք /////////
+ 
 
-//1.Given an age, figure out whether someone is a 
-//baby(1 months - 12 months), toddler (1
-// year - 2 years), child(3 years - 12 years ), 
-//teenager(13 years - 17 years) or adult(18
-//years and more ). Also check that age in months 
-//is between 1 and 12.
-
-const ageInMonths = +prompt();
-if (ageInMonths >= 1 && ageInMonths <= 12) {
-    console.log("Baby");
-} else if (ageInMonths >= 13 && ageInMonths <= 24) {
-    console.log("Toddler");
-} else if (ageInMonths >= 25 && ageInMonths <= 144) {
-    console.log("Child");
-} else if (ageInMonths >= 145 && ageInMonths <= 204) {
-    console.log("Teenager");
-} else{
-    console.log("Adult");
-} 
-
-
-//2. Given three numbers. Sort them by the 
-//ascending order.
-
-let a = -23;
-let b = -456;
-let c = 0;
-if(a > b){
-  [a, b] = [b, a];
-}
-if(a > c){
-   [a, c] = [c, a];
-}
-if(b > c){
-   [b, c] = [c, b];
-}
-console.log(a, b, c);
-
-//5. Given a number. Print all digits of the 
-//given number.
+//1. Given a number. Print the sum of digits.
+////// while  //////
 let num = +prompt();
- let numStr = num.toString().split('').join(',')
-    console.log(numStr);
-    
+let sum = 0;
+while(num > 0){
+  sum +=num % 10;
+  num = Math.floor(num / 10)
+}
+console.log(sum);
+
+///// for  ///////
+let i = +prompt();
+let sum = 0;
+for(; i > 0; i = Math.floor(i / 10) ){
+  sum += i % 10;
+}
+console.log(sum);
+
+//2. Given a number. Print the multiplication of 
+//digits.
+////// while  //////
+let num = +prompt();
+let sum = 1;
+while(num > 0){
+  sum *=num % 10;
+  num = Math.floor(num / 10)
+}
+console.log(sum);
+
+///// for   //////
+let i = +prompt();
+let sum = 1;
+for(; i > 0; i = Math.floor(i / 10) ){
+  sum *= i % 10;
+}
+console.log(sum);
+
+
+//3. Insert a number. Calculate product and sum of 
+//the digits of the number. If product is
+//divisible by the sum, print the quotient, otherwise
+// print the remainder.
+
+
+let num = +prompt()
+let sum = 0;
+let product = 1;
+for( ; num > 0;num =Math.floor(num / 10)){
+  for( ; num > 0;num =Math.floor(num / 10)){
+  sum +=num % 10;
+  product *=num % 10;
+  };
+  console.log(sum);  
+  }
+  console.log(product);
+
+if(product / sum === 0){
+  console.log(product / sum);
+  
+}else{
+  console.log(product % sum);
+  
+}
